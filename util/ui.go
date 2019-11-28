@@ -38,8 +38,8 @@ const (
 
 var (
 	sampleStrings = []string{}
-	helpText      = "ARROW KEYS: select and change  |  HOME/END: min/max value  |  " +
-		"ENTER: apply  |  C: change background  |  S: save font as "
+	helpText      = "ARROWS: select and change  |  HOME/END: min/max value  |  " +
+		"ENTER: apply  |  C: change background  |  S: save "
 	statusText         = ""
 	selectColor        = color.NRGBA{0x50, 0x60, 0x80, 0xff}
 	yellowColor        = color.NRGBA{0xFF, 0xFF, 0x55, 0xFF}
@@ -143,9 +143,9 @@ func (ui *FontUI) Update(screen *ebiten.Image) bool {
 	// save font JSON & PNG
 	if inpututil.IsKeyJustPressed(ebiten.KeyS) {
 		if ui.font.save(ui.config.OutFontsPath) == nil {
-			statusText = "FONT SAVED OK"
+			statusText = "FONT SAVED"
 		} else {
-			statusText = "SAVE FAILED!"
+			statusText = "SAVE FAILED"
 		}
 	}
 
@@ -220,7 +220,7 @@ func (ui *FontUI) Update(screen *ebiten.Image) bool {
 	// Draw help string
 	text.Draw(screen, helpText+ui.font.Name+".*", ui.uiFont, 16, WindowH-uiFontSize/2, color.White)
 	// Draw saved indicator
-	text.Draw(screen, statusText, ui.uiFont, WindowW-144, WindowH-uiFontSize/2, yellowColor)
+	text.Draw(screen, statusText, ui.uiFont, WindowW-120, WindowH-uiFontSize/2, yellowColor)
 
 	return false
 }
@@ -247,7 +247,7 @@ func (ui *FontUI) submit() {
 
 	face := ui.loader.getFace(ui.params[0].value, ui.params[1].value)
 	if face == nil {
-		statusText = "FONT LOAD ERROR"
+		statusText = "LOAD ERROR"
 		return
 	}
 
