@@ -7,7 +7,7 @@ import (
 
 	"github.com/hajimehoshi/ebiten"
 
-	"./util"
+	"github.com/enotofil/PJFont/util"
 )
 
 var (
