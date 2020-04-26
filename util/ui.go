@@ -15,7 +15,7 @@ import (
 
 	"golang.org/x/image/font"
 
-	"../effects"
+	"github.com/enotofil/PJFont/effects"
 )
 
 // TODO multiple ttf folders, sort fonts in alphabet order

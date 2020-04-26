@@ -12,7 +12,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"../effects"
+	"github.com/enotofil/PJFont/effects"
 	"golang.org/x/image/font"
 	"golang.org/x/image/math/fixed"
 )
