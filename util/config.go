@@ -54,12 +54,12 @@ func createDefault() *Config {
 			"В чащах юга жил бы цитрус? Да, но фальшивый!",
 		},
 		UnicodeRanges: []UnicodeRange{
-			UnicodeRange{
+			{
 				Name:           "Basic",
 				FirstCodePoint: 0x20,
 				LastCodePoint:  0x7F,
 			},
-			UnicodeRange{
+			{
 				Name:           "Russian",
 				FirstCodePoint: 0x410,
 				LastCodePoint:  0x44F,
