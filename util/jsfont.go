@@ -110,7 +110,7 @@ func (jf *jsFont) getGlyph(r rune) jsGlyph {
 			return gl
 		}
 	}
-	return jf.Chars[0x5F]
+	return jsGlyph{}
 }
 
 func (jf *jsFont) doesntFit() bool {
