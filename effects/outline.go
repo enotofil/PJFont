@@ -33,4 +33,5 @@ func (e *Outline) Apply(img *image.NRGBA, offset *image.Point, adv *int) {
 
 	*img = *outImg
 	*offset = offset.Sub(image.Pt(e.Width, e.Width))
+	*adv += e.Width
 }
