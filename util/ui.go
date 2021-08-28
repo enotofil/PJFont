@@ -269,7 +269,7 @@ func (ui *FontUI) submit() {
 		return
 	}
 
-	lineHeight := face.Metrics().Height.Round() + ui.params[10].value
+	lineHeight := face.Metrics().Height.Round() + ui.params[10].value * 2
 
 	// no path, no ext, name_X where X = font size
 	name := filepath.Base(ui.loader.fontNames[ui.params[0].value])
